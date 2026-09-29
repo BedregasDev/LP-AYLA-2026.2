@@ -1,4 +1,4 @@
-package programasIniciais;
+package br.ufpb.dcx.bedregal.daniel.programasIniciais;
 
 public class Oi {
 

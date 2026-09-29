@@ -1,4 +1,4 @@
-package programasIniciais;
+package br.ufpb.dcx.bedregal.daniel.programasIniciais;
 
 import javax.swing.JOptionPane;
 public class IMC {
