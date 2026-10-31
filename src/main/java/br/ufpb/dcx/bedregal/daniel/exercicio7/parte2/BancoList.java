@@ -23,8 +23,8 @@ public class BancoList {
     }
     public void abrirConta(String cpfTitular,String numConta,
                            String numAgencia,double saldoInicial){
-           Conta nova = new Conta(cpfTitular,numConta,numAgencia,saldoInicial);
-           contas.add(nova);
+        Conta nova = new Conta(cpfTitular,numConta,numAgencia,saldoInicial);
+        contas.add(nova);
 
     }
     public void transferir(String numContaO, String numAgO,

@@ -45,6 +45,6 @@ public class Conta {
         this.saldo = saldo;
     }
     public String toString(){
-        return "Conta número "+this.numeroConta+" do cliente de CPF "+this.cpfTitular;
+        return "Conta número: "+this.numeroConta+" do cliente de CPF: "+this.cpfTitular;
     }
 }
