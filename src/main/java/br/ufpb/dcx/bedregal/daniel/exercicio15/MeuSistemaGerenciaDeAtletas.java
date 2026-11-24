@@ -10,10 +10,10 @@ public class MeuSistemaGerenciaDeAtletas implements SistemaGerenciaDeAtletas {
     public MeuSistemaGerenciaDeAtletas() {
         this.atletas = new ArrayList<>();
     }
-    public void cadastrarAtleta(String codigoAtleta, int idade, List<Telefone> telefones) throws AtletaJaCadastradoException {
+    public void cadastrarAtleta(String codigoAtleta, int idade, List<Telefone> telefones) throws AtletaJaExisteException {
         for(Atleta a : this.atletas){
             if(a.getCodigo().equalsIgnoreCase(codigoAtleta)){
-                throw new AtletaJaCadastradoException("Atleta de código ["+ codigoAtleta + "] já cadastrado!");
+                throw new AtletaJaExisteException("Atleta de código ["+ codigoAtleta + "] já cadastrado!");
             }
         }
         Atleta atleta = new Atleta(codigoAtleta, idade, telefones);

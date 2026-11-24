@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface SistemaGerenciaDeAtletas {
 
-    public void cadastrarAtleta(String codigoAtleta, int idade, List<Telefone> telefones) throws AtletaJaCadastradoException;
+    public void cadastrarAtleta(String codigoAtleta, int idade, List<Telefone> telefones) throws AtletaJaExisteException;
 
     public List<Atleta> pesquisarAtletasComIdadeEntre(int idadeInferior, int idadeSuperior);
 
