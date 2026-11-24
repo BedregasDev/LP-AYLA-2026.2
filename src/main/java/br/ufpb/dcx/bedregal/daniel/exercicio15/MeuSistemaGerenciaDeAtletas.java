@@ -10,7 +10,12 @@ public class MeuSistemaGerenciaDeAtletas implements SistemaGerenciaDeAtletas {
     public MeuSistemaGerenciaDeAtletas() {
         this.atletas = new ArrayList<>();
     }
-    public void cadastrarAtleta(String codigoAtleta, int idade, List<Telefone> telefones) {
+    public void cadastrarAtleta(String codigoAtleta, int idade, List<Telefone> telefones) throws AtletaJaCadastradoException {
+        for(Atleta a : this.atletas){
+            if(a.getCodigo().equalsIgnoreCase(codigoAtleta)){
+                throw new AtletaJaCadastradoException("Atleta de código ["+ codigoAtleta + "] já cadastrado!");
+            }
+        }
         Atleta atleta = new Atleta(codigoAtleta, idade, telefones);
         atletas.add(atleta);
     }
@@ -43,8 +48,7 @@ public class MeuSistemaGerenciaDeAtletas implements SistemaGerenciaDeAtletas {
     public boolean apagarTelefoneDeAtleta(String codigoAtleta, Telefone tel){
         for(Atleta a : this.atletas){
             if(a.getCodigo().equalsIgnoreCase(codigoAtleta)){
-                a.apagaTelefone(tel);
-                return true;
+                return a.apagaTelefone(tel);
             }
         }return false;
     }

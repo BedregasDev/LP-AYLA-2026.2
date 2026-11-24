@@ -4,13 +4,13 @@ import java.util.List;
 
 public interface SistemaGerenciaDeAtletas {
 
-    void cadastrarAtleta(String codigoAtleta, int idade, List<Telefone> telefones);
+    public void cadastrarAtleta(String codigoAtleta, int idade, List<Telefone> telefones) throws AtletaJaCadastradoException;
 
-    List<Atleta> pesquisarAtletasComIdadeEntre(int idadeInferior, int idadeSuperior);
+    public List<Atleta> pesquisarAtletasComIdadeEntre(int idadeInferior, int idadeSuperior);
 
-    int pesquisarMaiorIdadeDosAtletas();
+    public int pesquisarMaiorIdadeDosAtletas();
 
-    boolean cadastrarTelefoneDeAtleta(String codigoAtleta, Telefone tel);
+    public boolean cadastrarTelefoneDeAtleta(String codigoAtleta, Telefone tel);
 
-    boolean apagarTelefoneDeAtleta(String codigoAtleta, Telefone tel);
+    public boolean apagarTelefoneDeAtleta(String codigoAtleta, Telefone tel);
 }
